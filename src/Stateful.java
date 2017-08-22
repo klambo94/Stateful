@@ -2,7 +2,7 @@
  * A mutable object that maintains state. Three components of state include textual, numerical,
  * and logical data.
  * Version:
- * v2.5.0
+ * v1.0.3
  * Author:
  *  API: Dr. Jody Paul
  *  Implementation: Kendra Lamb
