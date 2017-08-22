@@ -12,7 +12,7 @@ public class Stateful {
     private String text;
 
     /** The numerical data of this object*/
-    private Number number;
+    private Number number; //TODO: Research Number and ensure there isn't an error
 
     /** The logical data of this object*/
     private Boolean truth;
@@ -20,9 +20,7 @@ public class Stateful {
      * Constructs a stateful object using arbitrary values.
      */
     public Stateful() {
-        this.text = "";
-        this.number = -1;
-        this.truth = false;
+        this("", -1, false);
     }
 
     /**
@@ -82,7 +80,20 @@ public class Stateful {
      */
     @Override
     public String toString() {
-        return null;
+        String numString = this.number.toString();
+        String boolString;
+
+        if(this.truth) {
+            boolString = "true";
+        } else {
+            boolString = "false";
+        }
+
+        StringBuilder str = new StringBuilder("Stateful[");
+        str.append(boolString).append(", ").append(numString).append(", \"").append(this.text)
+                .append("\"]");
+        return str.toString();
+
     }
 
 }

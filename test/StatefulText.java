@@ -9,11 +9,14 @@ import static org.junit.Assert.assertTrue;
  * Test of Stateful
  */
 public class StatefulText {
-    Stateful testState;
+
+    //TODO: Test highest and lowest values of Number
+    private Stateful testState;
     @Before
     public void setUp() {
         testState = new Stateful();
     }
+
     @Test
     public void testGenericObject() throws Exception{
         assertEquals("Text Data", "", testState.text());
