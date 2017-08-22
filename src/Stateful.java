@@ -2,7 +2,7 @@
  * A mutable object that maintains state. Three components of state include textual, numerical,
  * and logical data.
  * Version:
- * v2.4.3
+ * v2.5.0
  * Author:
  *  API: Dr. Jody Paul
  *  Implementation: Kendra Lamb
@@ -12,7 +12,7 @@ public class Stateful {
     private String text;
 
     /** The numerical data of this object*/
-    private Number number; //TODO: Research Number and ensure there isn't an error
+    private Number number;
 
     /** The logical data of this object*/
     private Boolean truth;
@@ -65,13 +65,7 @@ public class Stateful {
      * it is changed to false. If the state value was false, it is changed to true.
      */
     public void flip() {
-        boolean currentTruth = truth;
-
-        if(currentTruth) {
-            this.truth = false;
-        } else {
-            this.truth = true;
-        }
+        this.truth = !truth;
     }
 
     /**
@@ -81,19 +75,17 @@ public class Stateful {
     @Override
     public String toString() {
         String numString = this.number.toString();
-        String boolString;
-
-        if(this.truth) {
-            boolString = "true";
-        } else {
-            boolString = "false";
-        }
+        String boolString = this.truth.toString();
 
         StringBuilder str = new StringBuilder("Stateful[");
-        str.append(boolString).append(", ").append(numString).append(", \"").append(this.text)
-                .append("\"]");
+        str.append(boolString)
+           .append(", ")
+           .append(numString)
+           .append(", \"")
+           .append(this.text)
+           .append("\"]");
+
         return str.toString();
 
     }
-
 }
