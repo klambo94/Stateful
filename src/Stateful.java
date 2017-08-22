@@ -8,11 +8,21 @@
  *  Implementation: Kendra Lamb
  */
 public class Stateful {
+    /** The text status of this object*/
+    private String text;
+
+    /** The numerical data of this object*/
+    private Number number;
+
+    /** The logical data of this object*/
+    private Boolean truth;
     /**
      * Constructs a stateful object using arbitrary values.
      */
     public Stateful() {
-
+        this.text = "";
+        this.number = -1;
+        this.truth = false;
     }
 
     /**
@@ -22,7 +32,9 @@ public class Stateful {
      * @param truth - the logical data
      */
     public Stateful(String text, Number number, Boolean truth) {
-
+        this.text = text;
+        this.number = number;
+        this.truth = truth;
     }
 
     /**
@@ -31,7 +43,7 @@ public class Stateful {
      */
     public Boolean truth() {
 
-        return null;
+        return this.truth;
     }
 
     /**
@@ -39,7 +51,7 @@ public class Stateful {
      * @return the numerical status
      */
     public Number number() {
-        return null;
+        return this.number;
     }
 
     /**
@@ -47,7 +59,7 @@ public class Stateful {
      * @return the textual status
      */
     public String text() {
-        return null;
+        return this.text;
     }
 
     /**
@@ -55,7 +67,13 @@ public class Stateful {
      * it is changed to false. If the state value was false, it is changed to true.
      */
     public void flip() {
+        boolean currentTruth = truth;
 
+        if(currentTruth) {
+            this.truth = false;
+        } else {
+            this.truth = true;
+        }
     }
 
     /**
