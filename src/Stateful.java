@@ -1,11 +1,8 @@
 /**
  * A mutable object that maintains state. Three components of state include textual, numerical,
  * and logical data.
- * Version:
- * v1.0.3
- * Author:
- *  API: Dr. Jody Paul
- *  Implementation: Kendra Lamb
+ * @version  v2.4.2
+ * @author API: Dr. Jody Paul Implmentation: Kendra Lamb
  */
 public class Stateful {
     /** The text status of this object*/
@@ -25,9 +22,9 @@ public class Stateful {
 
     /**
      * Constructs a stateful object using specified values.
-     * @param text - the textual data
-     * @param number - the numerical data
-     * @param truth - the logical data
+     * @param text the textual data
+     * @param number the numerical data
+     * @param truth the logical data
      */
     public Stateful(String text, Number number, Boolean truth) {
         this.text = text;
